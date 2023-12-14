@@ -7,6 +7,22 @@
   <script id="challenge">
     // 👉 CHALLENGE 1
     function profileActivation(profile, reason) {
+      if (profile.active && !reason) {
+        return "confirm status manually";
+}
+      if (profile.active) {
+        profile.active = false;
+        profile.reason= reason;
+        return {"active":false,"reason":"because"};
+      }   
+
+      if (!profile.active) {
+        profile.active = true;
+        delete profile.reason;
+        return profile;
+
+      }
+
 
     }
 
